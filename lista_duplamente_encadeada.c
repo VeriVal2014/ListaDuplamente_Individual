@@ -8,6 +8,27 @@ void unalocc (Node* nodeFree){
 	free(nodeFree);
 }
 
+int insertEmpty(int num){
+
+	Node *nodeInsert= malloc(sizeof(Node));
+	if(!nodeInsert){
+		return -2;
+	}
+	
+	else{
+		nodeInsert->element=num;
+		
+		nodeInsert->next=NULL;
+		nodeInsert->previous=NULL;
+		
+		list.firstNode=nodeInsert;
+		list.lastNode=nodeInsert;
+		
+		return 0;
+	}
+
+}
+
 int insertFront(int num){
 
 	if(list.firstNode==NULL){
@@ -52,27 +73,6 @@ int insertEnd(int num){
 	
 			return 0;
 		}
-	}
-
-}
-
-int insertEmpty(int num){
-
-	Node *nodeInsert= malloc(sizeof(Node));
-	if(!nodeInsert){
-		return -2;
-	}
-	
-	else{
-		nodeInsert->element=num;
-		
-		nodeInsert->next=NULL;
-		nodeInsert->previous=NULL;
-		
-		list.firstNode=nodeInsert;
-		list.lastNode=nodeInsert;
-		
-		return 0;
 	}
 
 }
